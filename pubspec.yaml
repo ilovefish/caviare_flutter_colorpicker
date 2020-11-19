@@ -1,7 +1,6 @@
 name: caviare_flutter_colorpicker
 description: Material Grid Color Picker  for Flutter apps
 version: 1.0.0
-author: OnlyCaviare <i_lovefish@126.com>
 homepage: https://github.com/ilovefish/caviare_flutter_colorpicker
 
 environment:
