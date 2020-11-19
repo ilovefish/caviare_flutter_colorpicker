@@ -1,6 +1,6 @@
-# Caviare Flutter Color Picker [![pub package]()]()
+# Caviare Flutter Color Picker [![pub package](https://img.shields.io/badge/pub-1.0.1-green)](https://pub.dev/packages/caviare_flutter_colorpicker)
 
-一个Material样式Grid风格的颜色选择器。默认情况下，它包含的是Material颜色，但你可以定义自己的颜色。
+一个Material风格GridView形式的颜色选择器。默认情况下，它包含的是Material颜色，但你可以定义自己的颜色。
 它支持竖向滚动和横向滚动，可以定义纵轴上Color圆点的数量，如果不指定它会自动填满纵轴。它会自动适配，以让出现在屏幕伤的都是完整的Color圆。
 
 ## 如何使用
@@ -10,7 +10,7 @@
 添加 `flutter_material_color_picker` 到 pubspec.yaml 文件中。
 
 ```yaml
-caviare_flutter_colorpicker: ^1.0.0
+caviare_flutter_colorpicker: ^1.0.1
 ```
 ### Import
 
