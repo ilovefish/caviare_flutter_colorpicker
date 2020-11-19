@@ -1,3 +1,3 @@
-## [0.0.1] - TODO: Add release date.
-
-* TODO: Describe initial release.
+## 1.0.0
+* 添加Color圆点数量自适应纵轴Size。
+* 添加自适应主轴能够显示完整所有Color圆点。
