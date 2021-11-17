@@ -5,11 +5,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ColorListPicker extends StatefulWidget {
-  final Color selectedColor;
-  final ValueChanged<Color> onColorChange;
-  final List<Color> colors;
+  final Color? selectedColor;
+  final ValueChanged<Color>? onColorChange;
+  final List<Color>? colors;
   final double circleSize;
-  final ScrollPhysics physics;
+  final ScrollPhysics? physics;
   final double spacing;
   final Axis scrollDirection;
   final int crossAxisCircleNum;
@@ -40,9 +40,9 @@ class ColorListPicker extends StatefulWidget {
 
 class _ColorListPickerState extends State<ColorListPicker> {
   List<Color> _colors = [];
-  Color _shadeColor;
+  Color? _shadeColor;
 
-  List<Color> fullMaterialColors = const <Color>[
+  List<ColorSwatch> fullMaterialColors = const <ColorSwatch>[
     const ColorSwatch(0xFFFFFFFF, {500: Colors.white}),
     const ColorSwatch(0xFF000000, {500: Colors.black}),
     Colors.red,
@@ -93,18 +93,17 @@ class _ColorListPickerState extends State<ColorListPicker> {
   }
 
   List<Color> _getMaterialColorShades(ColorSwatch color) {
-    return <Color>[
-      // if (color[50] != null) color[50],
-      if (color[100] != null) color[100],
-      // if (color[200] != null) color[200],
-      if (color[300] != null) color[300],
-      // if (color[400] != null) color[400],
-      if (color[500] != null) color[500],
-      // if (color[600] != null) color[600],
-      if (color[700] != null) color[700],
-      // if (color[800] != null) color[800],
-      if (color[900] != null) color[900],
-    ];
+    const colors = <Color>[];
+    if (color[100] != null) colors.add(color[100]!);
+    // if (color[200] != null) color[200],
+    if (color[300] != null) colors.add(color[300]!);
+    // if (color[400] != null) color[400],
+    if (color[500] != null) colors.add(color[500]!);
+    // if (color[600] != null) color[600],
+    if (color[700] != null) colors.add(color[700]!);
+    // if (color[800] != null) color[800],
+    if (color[900] != null) colors.add(color[900]!);
+    return colors;
   }
 
   List<Widget> _buildFullColors() {
@@ -129,7 +128,7 @@ class _ColorListPickerState extends State<ColorListPicker> {
 
   void _onColorSelected(Color color) {
     setState(() => _shadeColor = color);
-    if (widget.onColorChange != null) widget.onColorChange(color);
+    if (widget.onColorChange != null) widget.onColorChange!(color);
   }
 
   @override
@@ -146,7 +145,7 @@ class _ColorListPickerState extends State<ColorListPicker> {
 
   void _initSelectedValue() {
     if (widget.colors != null) {
-      _colors = widget.colors;
+      _colors = widget.colors!;
     } else {
       _colors = _getfullColors();
     }

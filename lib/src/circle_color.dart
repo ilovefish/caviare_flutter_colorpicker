@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 class CircleColor extends StatelessWidget {
   final bool isSelected;
   final Color color;
-  final VoidCallback onColorChoose;
+  final VoidCallback? onColorChoose;
   final double circleSize;
   final double borderSize;
   final Color borderColor;
   final double elevation;
 
   const CircleColor(
-      {Key key,
-      @required this.color,
-      @required this.circleSize,
+      {Key? key,
+      required this.color,
+      required this.circleSize,
       this.onColorChoose,
       this.isSelected = false,
       this.borderColor = Colors.black,
@@ -48,10 +48,10 @@ class CircleColor extends StatelessWidget {
 
 class ColorCircleAvatar extends StatelessWidget {
   final double circleSize;
-  final Color color;
-  final double borderSize;
+  final Color? color;
+  final double? borderSize;
 
-  ColorCircleAvatar({this.circleSize, this.color, this.borderSize});
+  ColorCircleAvatar({required this.circleSize, this.color, this.borderSize});
 
   @override
   Widget build(BuildContext context) {
@@ -64,13 +64,16 @@ class ColorCircleAvatar extends StatelessWidget {
 
 class SelectedColorCircleAvatar extends StatelessWidget {
   final double circleSize;
-  final Color color;
-  final Color borderColor;
+  final Color? color;
+  final Color? borderColor;
 
   final double borderSize;
 
   SelectedColorCircleAvatar(
-      {this.circleSize, this.color, this.borderColor, this.borderSize});
+      {required this.circleSize,
+      required this.color,
+      this.borderColor,
+      required this.borderSize});
 
   @override
   Widget build(BuildContext context) {
