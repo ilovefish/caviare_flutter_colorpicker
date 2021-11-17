@@ -93,7 +93,7 @@ class _ColorListPickerState extends State<ColorListPicker> {
   }
 
   List<Color> _getMaterialColorShades(ColorSwatch color) {
-    const colors = <Color>[];
+    List<Color> colors = <Color>[];
     if (color[100] != null) colors.add(color[100]!);
     // if (color[200] != null) color[200],
     if (color[300] != null) colors.add(color[300]!);

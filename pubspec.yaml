@@ -1,6 +1,6 @@
 name: caviare_flutter_colorpicker
 description: 一个Material风格GridView形式的颜色选择器。
-version: 1.0.2
+version: 1.0.3
 homepage: https://github.com/ilovefish/caviare_flutter_colorpicker
 
 environment:
